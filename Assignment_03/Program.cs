@@ -180,34 +180,34 @@ namespace Assignment_03
 
 
             #region Exercise 6: Browser History (Undo)
-            Stack<string> History = new Stack<string>();
+            //Stack<string> History = new Stack<string>();
             
-            //1
-            History.Push("google.com");
-            History.Push("github.com");
-            History.Push("stackoverflow.com");
-            History.Push("youtube.com");
-            History.Push("claude.ai");
-            //2
-            Console.WriteLine(History.Peek());
-            Console.WriteLine("======================================");
-            //3
-            for (int i = 0; i < 3; i++)
-            {
-                string word = History.Pop();
-                Console.WriteLine(word);
-            }
-            Console.WriteLine("======================================");
-            //4 
-            Console.WriteLine(History.Peek());
-            Console.WriteLine("======================================");
-            //5
-            History.Clear();
-            History.Pop();
-            //exception. System.InvalidOperationException: Stack empty.
-            //at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
-            //at System.Collections.Generic.Stack`1.Pop()
-            // as u see it does throw an exception because the sstack is empty .
+            ////1
+            //History.Push("google.com");
+            //History.Push("github.com");
+            //History.Push("stackoverflow.com");
+            //History.Push("youtube.com");
+            //History.Push("claude.ai");
+            ////2
+            //Console.WriteLine(History.Peek());
+            //Console.WriteLine("======================================");
+            ////3
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    string word = History.Pop();
+            //    Console.WriteLine(word);
+            //}
+            //Console.WriteLine("======================================");
+            ////4 
+            //Console.WriteLine(History.Peek());
+            //Console.WriteLine("======================================");
+            ////5
+            //History.Clear();
+            //History.Pop();
+            ////exception. System.InvalidOperationException: Stack empty.
+            ////at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
+            ////at System.Collections.Generic.Stack`1.Pop()
+            //// as u see it does throw an exception because the sstack is empty .
 
             #endregion 
         }
