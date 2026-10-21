@@ -1,4 +1,6 @@
-﻿using System.Runtime.ExceptionServices;
+﻿using System.Drawing;
+using System.Runtime.ExceptionServices;
+using System.Timers;
 
 namespace Assignment_03
 {
@@ -147,38 +149,67 @@ namespace Assignment_03
             #endregion
 
             #region Exercise 5: Print Queue Simulator
-            Queue<string> Printer = new Queue<string>();
-            Printer.Enqueue("Report.pdf");
-            Printer.Enqueue("Invoice.pdf");
-            Printer.Enqueue("Letter.docx");
-            Printer.Enqueue("Resume.pdf");
-            Printer.Enqueue("Photo.jpg");
+            //Queue<string> Printer = new Queue<string>();
+            //Printer.Enqueue("Report.pdf");
+            //Printer.Enqueue("Invoice.pdf");
+            //Printer.Enqueue("Letter.docx");
+            //Printer.Enqueue("Resume.pdf");
+            //Printer.Enqueue("Photo.jpg");
 
-            //1
-            foreach (string item in Printer)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine($"---->the count {Printer.Count}");
-            Console.WriteLine("======================================");
-            //2
-            Console.WriteLine(Printer.Peek());
-            Console.WriteLine("======================================");
-            //3
-            while (Printer.Count > 0)
-            {
-                string word = Printer.Dequeue();
-                Console.WriteLine($"Printing : [{word}]");
-            }
-            Console.WriteLine("======================================");
-            //4
-            //Printer.TryDequeue();
-            ////it gave a compile time error because there is nothing to dequeue on the queue .
+            ////1
+            //foreach (string item in Printer)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.WriteLine($"---->the count {Printer.Count}");
+            //Console.WriteLine("======================================");
+            ////2
+            //Console.WriteLine(Printer.Peek());
+            //Console.WriteLine("======================================");
+            ////3
+            //while (Printer.Count > 0)
+            //{
+            //    string word = Printer.Dequeue();
+            //    Console.WriteLine($"Printing : [{word}]");
+            //}
+            //Console.WriteLine("======================================");
+            ////4
+            ////Printer.TryDequeue();
+            //////it gave a compile time error because there is nothing to dequeue on the queue .
             #endregion
 
 
+            #region Exercise 6: Browser History (Undo)
+            Stack<string> History = new Stack<string>();
+            
+            //1
+            History.Push("google.com");
+            History.Push("github.com");
+            History.Push("stackoverflow.com");
+            History.Push("youtube.com");
+            History.Push("claude.ai");
+            //2
+            Console.WriteLine(History.Peek());
+            Console.WriteLine("======================================");
+            //3
+            for (int i = 0; i < 3; i++)
+            {
+                string word = History.Pop();
+                Console.WriteLine(word);
+            }
+            Console.WriteLine("======================================");
+            //4 
+            Console.WriteLine(History.Peek());
+            Console.WriteLine("======================================");
+            //5
+            History.Clear();
+            History.Pop();
+            //exception. System.InvalidOperationException: Stack empty.
+            //at System.Collections.Generic.Stack`1.ThrowForEmptyStack()
+            //at System.Collections.Generic.Stack`1.Pop()
+            // as u see it does throw an exception because the sstack is empty .
 
-
+            #endregion 
         }
     }
 }
