@@ -112,39 +112,73 @@ namespace Assignment_03
 
 
             #region Exercise 4: Unique Email Validator
+            ////1
+            //HashSet<string> emails = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            ////2
+            //emails.Add("ahmed@test.com");
+            //emails.Add("AHMED@test.com");
+            //emails.Add("sara@test.com");
+            //emails.Add("Sara@Test.Com");
+
+            ////3
+            //Console.WriteLine(emails.Count);
+            ////because it's not allowed to store the same value on the hashset only uniqe values are stored . 
+            //Console.WriteLine("======================================");
+            ////4
+            //HashSet<int> A = new HashSet<int>() { 1 ,2,3 ,4 ,5};
+            //HashSet<int> B = new HashSet<int>() { 4, 5, 6, 7, 8 };
+
+            ////5
+            //A.UnionWith(B);
+            //SetsHelper<int>.PrintSet(A);
+
+            //HashSet<int> A2 = new HashSet<int>() { 1, 2, 3, 4, 5 };
+            //A2.IntersectWith(B);
+            //SetsHelper<int>.PrintSet(A2);
+
+            //HashSet<int> A3 = new HashSet<int>() { 1, 2, 3, 4, 5 };
+            //A3.ExceptWith(B);
+            //SetsHelper<int>.PrintSet(A3);
+
+            //HashSet<int> A4 = new HashSet<int>() { 1, 2, 3, 4, 5 };
+            //bool result = new HashSet<int> { 1, 2 }.IsSubsetOf(A4);
+            //Console.WriteLine(result);
+            #endregion
+
+            #region Exercise 5: Print Queue Simulator
+            Queue<string> Printer = new Queue<string>();
+            Printer.Enqueue("Report.pdf");
+            Printer.Enqueue("Invoice.pdf");
+            Printer.Enqueue("Letter.docx");
+            Printer.Enqueue("Resume.pdf");
+            Printer.Enqueue("Photo.jpg");
+
             //1
-            HashSet<string> emails = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-
+            foreach (string item in Printer)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine($"---->the count {Printer.Count}");
+            Console.WriteLine("======================================");
             //2
-            emails.Add("ahmed@test.com");
-            emails.Add("AHMED@test.com");
-            emails.Add("sara@test.com");
-            emails.Add("Sara@Test.Com");
-
+            Console.WriteLine(Printer.Peek());
+            Console.WriteLine("======================================");
             //3
-            Console.WriteLine(emails.Count);
-            //because it's not allowed to store the same value on the hashset only uniqe values are stored . 
+            while (Printer.Count > 0)
+            {
+                string word = Printer.Dequeue();
+                Console.WriteLine($"Printing : [{word}]");
+            }
             Console.WriteLine("======================================");
             //4
-            HashSet<int> A = new HashSet<int>() { 1 ,2,3 ,4 ,5};
-            HashSet<int> B = new HashSet<int>() { 4, 5, 6, 7, 8 };
+            //Printer.TryDequeue();
+            ////it gave a compile time error because there is nothing to dequeue on the queue .
+            #endregion
 
-            //5
-            A.UnionWith(B);
-            SetsHelper<int>.PrintSet(A);
 
-            HashSet<int> A2 = new HashSet<int>() { 1, 2, 3, 4, 5 };
-            A2.IntersectWith(B);
-            SetsHelper<int>.PrintSet(A2);
 
-            HashSet<int> A3 = new HashSet<int>() { 1, 2, 3, 4, 5 };
-            A3.ExceptWith(B);
-            SetsHelper<int>.PrintSet(A3);
 
-            HashSet<int> A4 = new HashSet<int>() { 1, 2, 3, 4, 5 };
-            bool result = new HashSet<int> { 1, 2 }.IsSubsetOf(A4);
-            Console.WriteLine(result);
-            #endregion 
         }
     }
 }
